@@ -144,5 +144,6 @@
             android:layout_marginTop="16sp"
             android:fontFamily="sans-serif"
             android:text="@string/regfinefull"/>
+
     </LinearLayout>
 </ScrollView>
