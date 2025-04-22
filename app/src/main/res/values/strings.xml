@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">Ohayo, Sekai!</string>
     <string name="label_ohayo_sekai">Good Morning, World!</string>
+
+    <string name="welcomelabel0">Пожалуй, лучший фитнес трекер в ДВФУ</string>
+    <string name="welcomelabel1">Созданный студентами</string>
+    <string name="welcomelabel2">Уже есть аккаунт?</string>
+
+    <string name="reglabel0">Регистрация</string>
+    <string name="reglabel1">Логин</string>
+    <string name="reglabel2">Пароль</string>
+    <string name="reglabel3">Повторите пароль</string>
+    <string name="reglabel4">Имя или никнейм</string>
+    <string name="reglabel5">Пол</string>
+
+    <string name="reggen1">Мужской</string>
+    <string name="reggen2">Женский</string>
+    <string name="reggen3">Другое</string>
+
+    <string name="regbtn">Зарегистрироваться</string>
+
+    <string name="regfine1">Нажимая на кнопку, вы соглашаетесь с </string>
+    <string name="regfine2">политикой конфиденциальности</string>
+    <string name="regfine3"> и обработки персональных данных, а также принимаете </string>
+    <string name="regfine4">пользовательское соглашение</string>
+    <string name="regfinefull">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности и обработки персональных данных, а также принимаете пользовательское соглашение</string>
+
+    <string name="loglabel0">Вход</string>
+    <string name="logbtn">Войти</string>
+
 </resources>
