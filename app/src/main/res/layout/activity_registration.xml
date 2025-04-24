@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/arrowButton"
+                android:id="@+id/regArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -30,7 +30,7 @@
                 app:srcCompat="@drawable/ic_arrow_back" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/regTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16sp"
@@ -100,31 +100,31 @@
             android:layout_marginEnd="16sp">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/regGen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/reglabel5" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/regMale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/reggen1" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/regFemale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/reggen2" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/regFunky"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/reggen3" />
         </RadioGroup>
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
+            android:id="@+id/regButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -137,7 +137,7 @@
             android:text="@string/regbtn" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/regEULA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16sp"

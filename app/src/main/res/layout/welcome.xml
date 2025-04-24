@@ -16,13 +16,14 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/welImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="visible"
             app:srcCompat="@drawable/ic_registration_bicycles" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/welLabel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -34,7 +35,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/welLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
@@ -44,7 +45,7 @@
             android:textSize="16sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button4"
+            android:id="@+id/regButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16sp"
@@ -57,7 +58,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/logButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
