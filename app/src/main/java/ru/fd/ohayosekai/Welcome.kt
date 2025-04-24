@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.SpannableString
 import android.text.style.ClickableSpan
 
 import android.view.View
@@ -33,10 +34,5 @@ class Welcome: Activity() {
             startActivity(intent)
         }
     }
-
-    class MySpan: ClickableSpan(){
-        override fun onClick(p0: View) {
-            TODO("Not yet implemented")
-        }
-    }
 }
+
