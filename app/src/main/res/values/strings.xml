@@ -28,4 +28,10 @@
     <string name="loglabel0">Вход</string>
     <string name="logbtn">Войти</string>
 
+    <string name="activUpTab1">Моя</string>
+    <string name="activUpTab2">Пользователей</string>
+
+    <string name="activDownTab1">Активность</string>
+    <string name="activDownTab2">Профиль</string>
+
 </resources>

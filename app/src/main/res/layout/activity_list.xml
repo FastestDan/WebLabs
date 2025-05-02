@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityList">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/mine_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activUpTab1" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/others_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activUpTab2" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/listOfActivities"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:background="#F0F0F0"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@id/listOfActivities"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listOfActivities" />
+
+    <TextView
+        android:id="@+id/mine_test_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="僕のアクティビティ"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/listOfActivities"
+        app:layout_constraintEnd_toEndOf="@+id/listOfActivities"
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    <TextView
+        android:id="@+id/profile_test_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is a profile page"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/listOfActivities"
+        app:layout_constraintEnd_toEndOf="@+id/listOfActivities"
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    <TextView
+        android:id="@+id/others_test_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="А тут все остальные пасутся"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/listOfActivities"
+        app:layout_constraintEnd_toEndOf="@+id/listOfActivities"
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="468sp"
+        android:backgroundTint="#4B09F3"
+        android:clickable="true"
+        android:src="@drawable/play_btn"
+        app:layout_constraintBottom_toBottomOf="@id/listOfActivities"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintVertical_bias="0.864" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listOfActivities"
+        tools:layout_editor_absoluteX="-1sp">
+
+        <LinearLayout
+            android:id="@+id/whistle_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="-1sp"
+                tools:layout_editor_absoluteY="672sp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="17sp"
+                    android:layout_weight="1"
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:src="@drawable/purp_whistle"
+                    tools:layout_editor_absoluteX="-1sp"
+                    tools:layout_editor_absoluteY="672sp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/activDownTab1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/person_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="205sp"
+                tools:layout_editor_absoluteY="672sp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleX="0.75"
+                    android:scaleY="0.75"
+                    android:src="@drawable/gray_person"
+                    tools:layout_editor_absoluteX="205sp"
+                    tools:layout_editor_absoluteY="672sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/activDownTab2"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    tools:layout_editor_absoluteX="205sp"
+                    tools:layout_editor_absoluteY="698sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
