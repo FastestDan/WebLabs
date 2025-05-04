@@ -7,44 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".ActivityList">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/mine_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activUpTab1" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/others_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activUpTab2" />
-
-    </com.google.android.material.tabs.TabLayout>
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/listOfActivities"-->
+<!--        android:name="ru.fd.ohayosekai.ActivityFragment"-->
+<!--        android:layout_width="0sp"-->
+<!--        android:layout_height="0sp"-->
+<!--        android:background="#F0F0F0"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/listOfActivities"
+        android:name="ru.fd.ohayosekai.ActivityFragment"
         android:layout_width="0sp"
         android:layout_height="0sp"
         android:background="#F0F0F0"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="@id/listOfActivities"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/listOfActivities" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <TextView
         android:id="@+id/mine_test_label"
@@ -54,8 +37,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/listOfActivities"
         app:layout_constraintEnd_toEndOf="@+id/listOfActivities"
-        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities" />
 
     <TextView
         android:id="@+id/profile_test_label"
@@ -65,8 +47,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/listOfActivities"
         app:layout_constraintEnd_toEndOf="@+id/listOfActivities"
-        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities" />
 
     <TextView
         android:id="@+id/others_test_label"
@@ -76,30 +57,26 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/listOfActivities"
         app:layout_constraintEnd_toEndOf="@+id/listOfActivities"
-        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="468sp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#4B09F3"
         android:clickable="true"
         android:src="@drawable/play_btn"
         app:layout_constraintBottom_toBottomOf="@id/listOfActivities"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="@+id/listOfActivities"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:layout_constraintVertical_bias="0.864" />
+        app:layout_constraintStart_toStartOf="@+id/listOfActivities" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/listOfActivities"
         tools:layout_editor_absoluteX="-1sp">
 
         <LinearLayout
