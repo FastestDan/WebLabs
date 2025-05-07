@@ -23,11 +23,11 @@
         android:name="ru.fd.ohayosekai.ActivityFragment"
         android:layout_width="0sp"
         android:layout_height="0sp"
-        android:background="#F0F0F0"
+        android:background="#1A9D1313"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

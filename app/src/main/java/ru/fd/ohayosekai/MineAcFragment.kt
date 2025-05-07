@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +36,39 @@ class MineAcFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mine_ac, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var stamp = view.findViewById<RecyclerView>(R.id.stickers_mine)
+        var list = mutableListOf<MyList>()
+
+        for (i in 0..15){
+            list.add(
+                MyList(
+                    "",
+                    "FUCK ${i}",
+                    "",
+                    "",
+                    "",
+                    "NUMERO ${i}"
+                )
+            )
+        }
+
+        var aug = AdapterOfFA()
+        aug.list = list
+
+        aug.click = {
+            parentFragmentManager.beginTransaction().replace(
+                R.id.listOfActivities,
+                MineStickerFragment()
+            ).commit()
+        }
+
+        stamp.adapter = aug
+
+
+        super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {

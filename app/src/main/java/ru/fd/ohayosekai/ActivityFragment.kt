@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,24 @@ class ActivityFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_activity, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val adapter = AdapterOfBS(this)
+
+        val list = mutableListOf<String>()
+        list.add(getString(R.string.activUpTab1))
+        list.add(getString(R.string.activUpTab2))
+
+        this.view?.findViewById<ViewPager2>(R.id.viewPager2)?.adapter = adapter
+
+        this.view?.let { TabLayoutMediator(it.findViewById(R.id.tabLayout), it.findViewById(R.id.viewPager2),
+            { tab, pos ->
+                tab.text = list[pos]
+            }).attach()
+        }
+
+        super.onViewCreated(view, savedInstanceState)
     }
 
 
