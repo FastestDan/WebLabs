@@ -1,7 +1,7 @@
 package ru.fd.ohayosekai
 
-import android.app.Activity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -18,25 +18,67 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class ActivityList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_list)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
                 add(
                     R.id.listOfActivities,
-                    ActivityFragment.newInstance("SASISKA", "ZERO")
+                    ActivityFragment.newInstance("Activity", "Mine"),
+                    "Mine"
                 )
-                addToBackStack("ZERO")
                 commit()
             }
-
         }
 
-//        findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnNavigationItemSelectedListener {
-//            if (supportFragmentManager.findFragmentByTag("Activity") != null){
-//                supportFragmentManager.findFragmentByTag("Activity").visibility = View.INVISIBLE
-//
-//            }
-//
-//        }
+        findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnItemSelectedListener{
+            item -> when (item.itemId) {
+                R.id.profile_button -> {
+                    supportFragmentManager.beginTransaction().replace(
+                        R.id.listOfActivities,
+                        ProfileFragment()
+                    ).commit()
+//                    if (supportFragmentManager.findFragmentByTag("Mine") != null) {
+//                        supportFragmentManager.beginTransaction().apply {
+//                            detach(ActivityFragment())
+//                            commit()
+//                        }
+//                    }
+//                    if (supportFragmentManager.findFragmentByTag("Pass") != null) {
+//                        supportFragmentManager.beginTransaction().apply {
+//                            attach(ProfileFragment())
+//                            commit()
+//                        }
+//                    } else {
+//                        supportFragmentManager.beginTransaction().apply {
+//                            add(
+//                                R.id.listOfActivities,
+//                                ProfileFragment.newInstance("Profile", "Pass"),
+//                                "Pass"
+//                            )
+//                            commit()
+//                        }
+//                    }
+                }
+                R.id.active_button -> {
+                    supportFragmentManager.beginTransaction().replace(
+                        R.id.listOfActivities,
+                        ActivityFragment()
+                    ).commit()
+//                    if (supportFragmentManager.findFragmentByTag("Mine") != null) {
+//                        supportFragmentManager.beginTransaction().apply {
+//                            attach(ActivityFragment())
+//                            commit()
+//                        }
+//                    }
+//                    if (supportFragmentManager.findFragmentByTag("Pass") != null) {
+//                        supportFragmentManager.beginTransaction().apply {
+//                            detach(ProfileFragment())
+//                            commit()
+//                        }
+//                    }
+                }
+            };true
+        }
     }
 }

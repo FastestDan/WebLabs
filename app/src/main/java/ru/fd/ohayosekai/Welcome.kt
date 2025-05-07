@@ -18,21 +18,16 @@ class Welcome: Activity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_list)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
-//        findViewById<ImageView>(R.id.welImage).setImageResource(R.drawable.ic_registration_bicycles)
-//        findViewById<MaterialButton>(R.id.regButton).setOnClickListener{
-//            val intent = Intent(this, Registration::class.java)
-//            startActivity(intent)
-//        }
-//        findViewById<TextView>(R.id.logButton).setOnClickListener{
-//            val intent = Intent(this, Login::class.java)
-//            startActivity(intent)
-//        }
+        setContentView(R.layout.welcome)
+        findViewById<ImageView>(R.id.welImage).setImageResource(R.drawable.ic_registration_bicycles)
+        findViewById<MaterialButton>(R.id.regButton).setOnClickListener{
+            val intent = Intent(this, Registration::class.java)
+            startActivity(intent)
+        }
+        findViewById<TextView>(R.id.logButton).setOnClickListener{
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
     }
 }
 

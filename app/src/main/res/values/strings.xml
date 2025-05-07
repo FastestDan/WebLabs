@@ -33,6 +33,9 @@
 
     <string name="activDownTab1">Активность</string>
     <string name="activDownTab2">Профиль</string>
+
+    <string name="activblank1">Время потренить</string>
+    <string name="activblank2">Нажимай на кнопку ниже и начинаем\nтрекать активность</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
