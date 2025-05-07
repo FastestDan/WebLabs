@@ -76,19 +76,6 @@ class MineAcFragment : Fragment() {
                 "26.04.2025",
                 "Апрель 2025"))
 
-//        for (i in 0..15){
-//            list.add(
-//                MyList(
-//                    "BLOOD ${i}",
-//                    "FUCK ${i}",
-//                    "SHIT ${i}",
-//                    "COCK ${i}",
-//                    "CUNT ${i}",
-//                    "NUMERO ${i}"
-//                )
-//            )
-//        }
-
         var aug = AdapterOfFA()
         aug.list = list
 

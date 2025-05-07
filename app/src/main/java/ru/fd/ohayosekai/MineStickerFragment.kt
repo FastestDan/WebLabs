@@ -47,7 +47,14 @@ class MineStickerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine_sticker, container, false)
+        var view = inflater.inflate(R.layout.fragment_mine_sticker, container, false)
+        view.findViewById<ImageButton>(R.id.msticker_arrow).setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(
+                R.id.listOfActivities,
+                ActivityFragment()
+            ).commit()
+        }
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,14 +65,14 @@ class MineStickerFragment : Fragment() {
         view.findViewById<TextView>(R.id.detail_start).setText(m_start)
         view.findViewById<TextView>(R.id.detail_finish).setText(m_finish)
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<ImageButton>(R.id.msticker_arrow).setOnClickListener {
-            parentFragment?.parentFragmentManager?.beginTransaction()?.apply {
-                replace(
-                    R.id.listOfActivities,
-                    MineAcFragment()
-                ).commit()
-            }
-        }
+//        view.findViewById<ImageButton>(R.id.msticker_arrow).setOnClickListener {
+//            parentFragment?.parentFragmentManager?.beginTransaction()?.apply {
+//                replace(
+//                    R.id.listOfActivities,
+//                    MineAcFragment()
+//                ).commit()
+//            }
+//        }
     }
 
 

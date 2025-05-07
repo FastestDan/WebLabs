@@ -1,8 +1,10 @@
 package ru.fd.ohayosekai
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
@@ -16,6 +18,7 @@ import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityList : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -79,6 +82,18 @@ class ActivityList : AppCompatActivity() {
 //                    }
                 }
             };true
+        }
+        findViewById<TextView?>(R.id.profchange)?.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(
+                R.id.listOfActivities,
+                PasswordFragment()
+            ).commit()
+        }
+        findViewById<ImageButton>(R.id.passBtn)?.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(
+                R.id.listOfActivities,
+                ProfileFragment()
+            ).commit()
         }
     }
 }

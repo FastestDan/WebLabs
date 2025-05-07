@@ -40,7 +40,17 @@
     <string name="stickerstart">Старт</string>
     <string name="stickerstop">Стоп</string>
     <string name="stickercom">Комментарий</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="proflabel">Профиль</string>
+    <string name="profsave">Сохранить</string>
+    <string name="proflog">Логин</string>
+    <string name="profpass">Пароль</string>
+    <string name="profchange">Изменить пароль</string>
+    <string name="profout">Выйти</string>
+
+    <string name="passlabel">Изменить пароль</string>
+    <string name="passold">Старый пароль</string>
+    <string name="passnew">Новый пароль</string>
+    <string name="passagain">Повторите пароль</string>
+    <string name="passaccept">Принять</string>
 </resources>

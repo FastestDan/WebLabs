@@ -50,8 +50,14 @@ class OtherStickerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_other_sticker, container, false)
+        var view = inflater.inflate(R.layout.fragment_other_sticker, container, false)
+        view.findViewById<ImageButton>(R.id.osticker_arrow).setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(
+                R.id.listOfActivities,
+                ActivityFragment()
+            ).commit()
+        }
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,14 +68,6 @@ class OtherStickerFragment : Fragment() {
         this.view?.findViewById<TextView>(R.id.detail_start)?.setText(o_start)
         this.view?.findViewById<TextView>(R.id.detail_finish)?.setText(o_finish)
         view.findViewById<TextView>(R.id.detail_tag).setText(o_tag)
-        this.view?.findViewById<ImageButton>(R.id.osticker_arrow)?.setOnClickListener {
-            parentFragment?.parentFragmentManager?.beginTransaction()?.apply {
-                replace(
-                    R.id.listOfActivities,
-                    OtherAcFragment()
-                ).commit()
-            }
-        }
         super.onViewCreated(view, savedInstanceState)
     }
 
