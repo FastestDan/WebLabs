@@ -36,6 +36,10 @@
 
     <string name="activblank1">Время потренить</string>
     <string name="activblank2">Нажимай на кнопку ниже и начинаем\nтрекать активность</string>
+
+    <string name="stickerstart">Старт</string>
+    <string name="stickerstop">Стоп</string>
+    <string name="stickercom">Комментарий</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

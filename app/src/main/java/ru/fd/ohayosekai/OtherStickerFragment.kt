@@ -16,29 +16,33 @@ private const val ARG_PARAM3 = "param3"
 private const val ARG_PARAM4 = "param4"
 private const val ARG_PARAM5 = "param5"
 private const val ARG_PARAM6 = "param6"
+private const val ARG_PARAM7 = "param7"
+
 /**
  * A simple [Fragment] subclass.
- * Use the [MineStickerFragment.newInstance] factory method to
+ * Use the [OtherStickerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MineStickerFragment : Fragment() {
+class OtherStickerFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var m_type: String? = null
-    private var m_dist: String? = null
-    private var m_ago: String? = null
-    private var m_time: String? = null
-    private var m_start: String? = null
-    private var m_finish: String? = null
+    private var o_type: String? = null
+    private var o_dist: String? = null
+    private var o_ago: String? = null
+    private var o_time: String? = null
+    private var o_start: String? = null
+    private var o_finish: String? = null
+    private var o_tag: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            m_type = it.getString(ARG_PARAM1)
-            m_dist = it.getString(ARG_PARAM2)
-            m_ago = it.getString(ARG_PARAM3)
-            m_time = it.getString(ARG_PARAM4)
-            m_start = it.getString(ARG_PARAM5)
-            m_finish = it.getString(ARG_PARAM6)
+            o_type = it.getString(ARG_PARAM1)
+            o_dist = it.getString(ARG_PARAM2)
+            o_ago = it.getString(ARG_PARAM3)
+            o_time = it.getString(ARG_PARAM4)
+            o_start = it.getString(ARG_PARAM5)
+            o_finish = it.getString(ARG_PARAM6)
+            o_tag = it.getString(ARG_PARAM7)
         }
     }
 
@@ -47,27 +51,27 @@ class MineStickerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mine_sticker, container, false)
+        return inflater.inflate(R.layout.fragment_other_sticker, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        view.findViewById<TextView>(R.id.detail_type).setText(m_type)
-        view.findViewById<TextView>(R.id.detail_dist).setText(m_dist)
-        view.findViewById<TextView>(R.id.detail_ago).setText(m_ago)
-        view.findViewById<TextView>(R.id.detail_time).setText(m_time)
-        view.findViewById<TextView>(R.id.detail_start).setText(m_start)
-        view.findViewById<TextView>(R.id.detail_finish).setText(m_finish)
-        super.onViewCreated(view, savedInstanceState)
-        view.findViewById<ImageButton>(R.id.msticker_arrow).setOnClickListener {
+        this.view?.findViewById<TextView>(R.id.detail_type)?.setText(o_type)
+        this.view?.findViewById<TextView>(R.id.detail_dist)?.setText(o_dist)
+        this.view?.findViewById<TextView>(R.id.detail_ago)?.setText(o_ago)
+        this.view?.findViewById<TextView>(R.id.detail_time)?.setText(o_time)
+        this.view?.findViewById<TextView>(R.id.detail_start)?.setText(o_start)
+        this.view?.findViewById<TextView>(R.id.detail_finish)?.setText(o_finish)
+        view.findViewById<TextView>(R.id.detail_tag).setText(o_tag)
+        this.view?.findViewById<ImageButton>(R.id.osticker_arrow)?.setOnClickListener {
             parentFragment?.parentFragmentManager?.beginTransaction()?.apply {
                 replace(
                     R.id.listOfActivities,
-                    MineAcFragment()
+                    OtherAcFragment()
                 ).commit()
             }
         }
+        super.onViewCreated(view, savedInstanceState)
     }
-
 
     companion object {
         /**
@@ -76,12 +80,12 @@ class MineStickerFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment StickerFragment.
+         * @return A new instance of fragment OtherStickerFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String, param3: String, param4: String, param5: String, param6: String) =
-            MineStickerFragment().apply {
+        fun newInstance(param1: String, param2: String, param3: String, param4: String, param5: String, param6: String, param7: String) =
+            OtherStickerFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -89,6 +93,7 @@ class MineStickerFragment : Fragment() {
                     putString(ARG_PARAM4, param4)
                     putString(ARG_PARAM5, param5)
                     putString(ARG_PARAM6, param6)
+                    putString(ARG_PARAM7, param7)
                 }
             }
     }

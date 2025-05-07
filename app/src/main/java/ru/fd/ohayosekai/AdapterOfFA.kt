@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class AdapterOfFA : RecyclerView.Adapter<AdapterOfFA.Holder>() {
 
     var list : List<MyList> = listOf()
-    var click: ((Int) -> Unit)? = null
+    var click: ((MyList) -> Unit)? = null
 
     class Holder(view: View): RecyclerView.ViewHolder(view){
         var sep = view.findViewById<TextView>(R.id.sticker_separator)
@@ -35,11 +35,11 @@ class AdapterOfFA : RecyclerView.Adapter<AdapterOfFA.Holder>() {
     }
 
     override fun getItemCount(): Int {
-        return 15
+        return list.size
     }
 
     override fun getItemViewType(position: Int): Int {
-        if (list[position].sep != null && position < 5){
+        if (list[position].sep != null){
             return VIEW_TYPE_1
         }
         else{
@@ -49,9 +49,7 @@ class AdapterOfFA : RecyclerView.Adapter<AdapterOfFA.Holder>() {
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         if (list[position].sep != null) {
-            if (position < 5) {
-                holder.sep.text = list[position].sep
-            }
+            holder.sep.text = list[position].sep
         }
         holder.dist.text = list[position].dist
         holder.time.text = list[position].time
@@ -60,7 +58,7 @@ class AdapterOfFA : RecyclerView.Adapter<AdapterOfFA.Holder>() {
         holder.ago.text = list[position].ago
 
         holder.btn.setOnClickListener{
-            click?.invoke(position)
+            click?.invoke(list[position])
         }
     }
 

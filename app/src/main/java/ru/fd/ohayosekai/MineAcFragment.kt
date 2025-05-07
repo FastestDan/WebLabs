@@ -40,29 +40,65 @@ class MineAcFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var stamp = view.findViewById<RecyclerView>(R.id.stickers_mine)
-        var list = mutableListOf<MyList>()
+        var list = listOf(MyList(
+            "14 км",
+            "Пробежка",
+            "1 час 5 минут",
+            "13:00",
+            "14:05",
+            "@FastDan",
+            "14 часов назад",
+            "Вчера"),
+            MyList(
+                "100 м",
+                "Велосипед",
+                "30 минут",
+                "15:04",
+                "15:34",
+                "@FastDan",
+                "06.05.2025",
+                "Май 2025"),
+            MyList(
+                "1 км",
+                "Пробежка",
+                "20 минут",
+                "13:00",
+                "13:20",
+                "@FastDan",
+                "05.05.2025"),
+            MyList(
+                "5 км",
+                "Пробежка",
+                "1 час",
+                "16:05",
+                "17:05",
+                "@FastDan",
+                "26.04.2025",
+                "Апрель 2025"))
 
-        for (i in 0..15){
-            list.add(
-                MyList(
-                    "",
-                    "FUCK ${i}",
-                    "",
-                    "",
-                    "",
-                    "NUMERO ${i}"
-                )
-            )
-        }
+//        for (i in 0..15){
+//            list.add(
+//                MyList(
+//                    "BLOOD ${i}",
+//                    "FUCK ${i}",
+//                    "SHIT ${i}",
+//                    "COCK ${i}",
+//                    "CUNT ${i}",
+//                    "NUMERO ${i}"
+//                )
+//            )
+//        }
 
         var aug = AdapterOfFA()
         aug.list = list
 
         aug.click = {
-            parentFragmentManager.beginTransaction().replace(
-                R.id.listOfActivities,
-                MineStickerFragment()
-            ).commit()
+            parentFragment?.parentFragmentManager?.beginTransaction()?.apply {
+                replace(
+                    R.id.listOfActivities,
+                    MineStickerFragment.newInstance(it.type, it.dist, it.ago, it.time, it.start, it.finish)
+                ).commit()
+            }
         }
 
         stamp.adapter = aug
