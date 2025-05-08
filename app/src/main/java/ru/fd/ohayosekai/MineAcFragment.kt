@@ -51,8 +51,8 @@ class MineAcFragment : Fragment() {
             for (i in 0..it.size){
                 var ml = MyList(
                     type = it[i].type,
-                    start = it[i].start.toString(),
-                    finish = it[i].finish.toString(),
+                    start = it[i].start,
+                    finish = it[i].finish,
                     time = (it[i].finish.toInt() - it[i].start.toInt()).toString(),
                     ago = "Несколько секунд назад",
                     tag = "",

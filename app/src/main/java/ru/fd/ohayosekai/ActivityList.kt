@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityList : AppCompatActivity() {

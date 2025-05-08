@@ -6,9 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.Date
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +25,7 @@ class TrinityStartFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +44,7 @@ class TrinityStartFragment : Fragment() {
         view.findViewById<MaterialButton>(R.id.trinitygoing).setOnClickListener {
             parentFragmentManager.beginTransaction().replace(
                 R.id.actionOfTrinity,
-                TrinityGoingFragment()
+                TrinityGoingFragment.newInstance(this.param1.toString(), Date(), IntRange(1, 25).random())
             ).commit()
         }
         return view
@@ -53,6 +55,11 @@ class TrinityStartFragment : Fragment() {
         var list = mutableListOf("Велосипед", "Бег", "Шаг")
         var aug = AnotherAdapterOfFA()
         aug.list = list
+
+        aug.click = {
+            this.param1 = it
+        }
+
         card.adapter = aug
         super.onViewCreated(view, savedInstanceState)
     }

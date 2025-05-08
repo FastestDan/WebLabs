@@ -12,7 +12,7 @@ class DBController : ViewModel(){
 
     val actions = MutableLiveData<List<Action>>()
 
-    fun addUser(type: String, start: Date, finish: Date, latlot: Float){
+    fun addUser(type: String, start: Date, finish: Date, latlot: Int){
         viewModelScope.launch {
             db.getActionDao().add(Action(
                 type = type,

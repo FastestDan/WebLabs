@@ -24,6 +24,7 @@ class ActivityFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var message: String? = null
     private var tag: String? = null
+//    var db: DBController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +82,7 @@ class ActivityFragment : Fragment() {
                     putString(ARG_PARAM1, message)
                     putString(ARG_PARAM2, tag)
                 }
+//                db = dab
             }
     }
 }

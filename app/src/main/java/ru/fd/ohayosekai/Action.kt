@@ -13,6 +13,6 @@ data class Action(
     val start: String,
     val finish: String,
 //    val latlot: Pair<Float, Float>
-    var latlot: Float
+    var latlot: Int
     )
 
