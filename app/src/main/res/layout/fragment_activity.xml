@@ -9,22 +9,23 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/mine_tab"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/activUpTab1" />-->
+        <!--        <com.google.android.material.tabs.TabItem-->
+        <!--            android:id="@+id/mine_tab"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@string/activUpTab1" />-->
 
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/others_tab"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/activUpTab2" />-->
+        <!--        <com.google.android.material.tabs.TabItem-->
+        <!--            android:id="@+id/others_tab"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@string/activUpTab2" />-->
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -44,12 +45,12 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="576dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="28sp"
+        android:layout_marginBottom="64sp"
         android:backgroundTint="#4B09F3"
         android:clickable="true"
         android:src="@drawable/play_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
