@@ -102,7 +102,6 @@ class ActivityList : AppCompatActivity() {
 
         dbcon = ViewModelProvider(this)[DBController::class.java]
         dbcon.actions.observe(this){
-
         }
     }
 }

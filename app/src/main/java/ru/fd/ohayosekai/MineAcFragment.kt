@@ -56,7 +56,7 @@ class MineAcFragment : Fragment() {
                     time = (it[i].finish.toInt() - it[i].start.toInt()).toString(),
                     ago = "Несколько секунд назад",
                     tag = "",
-                    sep = it[i].finish,
+                    sep = SimpleDateFormat("dow mon dd hh:mm:ss zzz yyyy").parse(it[i].finish)?.month.toString(),
                     dist = it[i].latlot.toString() + " км"
                 )
                 list.add(ml)
