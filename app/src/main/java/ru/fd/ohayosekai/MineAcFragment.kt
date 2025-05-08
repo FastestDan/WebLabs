@@ -1,11 +1,14 @@
 package ru.fd.ohayosekai
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,7 @@ class MineAcFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var dbcon: DBController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,43 +42,61 @@ class MineAcFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_mine_ac, container, false)
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var stamp = view.findViewById<RecyclerView>(R.id.stickers_mine)
-        var list = listOf(MyList(
-            "14 км",
-            "Пробежка",
-            "1 час 5 минут",
-            "13:00",
-            "14:05",
-            "@FastDan",
-            "14 часов назад",
-            "Вчера"),
-            MyList(
-                "100 м",
-                "Велосипед",
-                "30 минут",
-                "15:04",
-                "15:34",
-                "@FastDan",
-                "06.05.2025",
-                "Май 2025"),
-            MyList(
-                "1 км",
-                "Пробежка",
-                "20 минут",
-                "13:00",
-                "13:20",
-                "@FastDan",
-                "05.05.2025"),
-            MyList(
-                "5 км",
-                "Пробежка",
-                "1 час",
-                "16:05",
-                "17:05",
-                "@FastDan",
-                "26.04.2025",
-                "Апрель 2025"))
+        dbcon = ViewModelProvider(this)[DBController::class.java]
+        var list = mutableListOf<MyList>()
+        dbcon.actions.observe(viewLifecycleOwner){
+            for (i in 0..it.size){
+                var ml = MyList(
+                    type = it[i].type,
+                    start = it[i].start.toString(),
+                    finish = it[i].finish.toString(),
+                    time = (it[i].finish.toInt() - it[i].start.toInt()).toString(),
+                    ago = "Несколько секунд назад",
+                    tag = "",
+                    sep = it[i].finish,
+                    dist = it[i].latlot.toString() + " км"
+                )
+                list.add(ml)
+            }
+        }
+//        var list = listOf(MyList(
+//            "14 км",
+//            "Пробежка",
+//            "1 час 5 минут",
+//            "13:00",
+//            "14:05",
+//            "",
+//            "14 часов назад",
+//            "Вчера"),
+//            MyList(
+//                "100 м",
+//                "Велосипед",
+//                "30 минут",
+//                "15:04",
+//                "15:34",
+//                "",
+//                "06.05.2025",
+//                "Май 2025"),
+//            MyList(
+//                "1 км",
+//                "Пробежка",
+//                "20 минут",
+//                "13:00",
+//                "13:20",
+//                "",
+//                "05.05.2025"),
+//            MyList(
+//                "5 км",
+//                "Пробежка",
+//                "1 час",
+//                "16:05",
+//                "17:05",
+//                "",
+//                "26.04.2025",
+//                "Апрель 2025"))
 
         var aug = AdapterOfFA()
         aug.list = list
